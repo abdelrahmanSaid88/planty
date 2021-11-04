@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:planty/routes.dart';
+
+import 'package:planty/screens/Registration/sign_in.dart';
+
+
 
 class MyThemeData {
   static var MainDarkGreen =const Color.fromRGBO(87, 169, 154, 1.0);
@@ -11,16 +16,16 @@ void main() {
   runApp( MyApp());
 
 }
+
 class MyApp extends StatelessWidget {
   // const MyApp({Key? key}) : super(key: key);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-      },
-
+      initialRoute: SignIn.routeName,
+      routes: routes,
     );
   }
 }
