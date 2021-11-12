@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:planty/components/my_theme_data.dart';
 
 
-import '../../main.dart';
 class HomeScreen extends StatefulWidget {
   //const HomeScreen({Key? key}) : super(key: key);
   static final routeName = 'Home';

@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../main.dart';
+import 'my_theme_data.dart';
 
 class CoustomButtonsSocal extends StatelessWidget {
-  const CoustomButtonsSocal({
-    Key key,
-  }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
