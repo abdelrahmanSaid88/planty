@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:planty/components/build_password_form_field.dart';
+import 'package:planty/components/build_username_form_field.dart';
 import 'package:planty/components/coustom_btn_alignment.dart';
 import 'package:planty/components/coustom_btn_socal.dart';
 import 'package:planty/components/build_email_form_field.dart';
@@ -9,7 +9,6 @@ import 'package:planty/components/my_theme_data.dart';
 import 'package:planty/screens/Home/home_screen.dart';
 import 'package:planty/screens/Registration/sign_in.dart';
 import '../../constants.dart';
-import '../../main.dart';
 
 class SignUp extends StatefulWidget {
 //const SignUp({Key? key}) : super(key: key);
@@ -55,13 +54,10 @@ class _SignUpState extends State<SignUp> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 23,
                                 color: MyThemeData.Black)),
-                        buildEmailFormField(
-                          'Username',
-                          kNamelNullError,
-                        ),
+                        buildUserNameFormField('UserName',kNamelNullError),
                         buildEmailFormField(
                             'Email address', kEmailNullError),
-                        buildPasswordFormField('Password'),
+                        const buildPasswordFormField(password: 'Password'),
                         const SizedBox(height: 14),
                         CoustomButtonAlignment('SIGN UP', onClick),
                         const SizedBox(height: 18),

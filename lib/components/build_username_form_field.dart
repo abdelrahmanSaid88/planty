@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'my_theme_data.dart';
 
-class buildEmailFormField extends StatelessWidget{
+class buildUserNameFormField extends StatelessWidget{
 
   var emailController = TextEditingController();
-   String? email;
+   String? username;
    String? error;
    IconData? icon;
   final _registrationFormKey = GlobalKey<FormState>();
-  buildEmailFormField( this.email,this.error, { this.icon}) ;
+  buildUserNameFormField( this.username,this.error, { this.icon}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +19,10 @@ class buildEmailFormField extends StatelessWidget{
       padding: const EdgeInsets.only(left: 45.0, right: 45.0),
       child: TextFormField(
         key: _registrationFormKey,
-        onSaved: (newValue) => email = newValue,
+        onSaved: (newValue) => username = newValue,
         validator: (value) {
           if (value!.isEmpty) {
             return error;
-          } else if (!emailValidatorRegExp.hasMatch(value)) {
-            return kInvalidEmailError;
           }
           return null;
         },
@@ -32,9 +30,9 @@ class buildEmailFormField extends StatelessWidget{
           print(value);
         },
         controller: emailController,
-        keyboardType: TextInputType.emailAddress,
+        keyboardType: TextInputType.name,
         decoration: InputDecoration(
-            labelText: email,
+            labelText: username,
             labelStyle: TextStyle(
               fontWeight: FontWeight.w500,
               color: MyThemeData.MainDarkGreen,

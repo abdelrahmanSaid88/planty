@@ -10,9 +10,7 @@ import 'package:planty/screens/Home/home_screen.dart';
 import 'package:planty/screens/Registration/sign_up.dart';
 import '../../constants.dart';
 
-
 class SignIn extends StatefulWidget {
-
   static const routeName = 'Sign In';
 
   @override
@@ -20,9 +18,8 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  var emailController = TextEditingController();
-  var passwordController = TextEditingController();
   final _registrationFormKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -43,54 +40,56 @@ class _SignInState extends State<SignIn> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              Form(key: _registrationFormKey, child:
-              Column(
-                children: [
-                  const SizedBox(height: 100),
-                  Text('Welcome To Planty App',
-                      style: GoogleFonts.robotoSlab(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                          color: MyThemeData.Black)),
-                  //Email
-                  buildEmailFormField( 'Email Address',kEmailNullError,
-                      icon: Icons.email),
-                  buildPasswordFormField('Password',icon: Icons.visibility),
-                  const SizedBox(height: 15),
-                  CoustomButtonAlignment('LOGIN', onClick,
-                      Btn_icon: Icons.arrow_forward),
-                  const SizedBox(height: 20),
-                  //Sign in with
-                  Text(
-                      'ـــــــــــــــــــــــــ  Sign in with  ــــــــــــــــــــــــــــ',
-                      style: GoogleFonts.andada(
-                          fontWeight: FontWeight.normal,
-                          fontSize: 18,
-                          color: MyThemeData.MainDarkGreen)),
-                  //sign in with Buttons
-                  CoustomButtonsSocal(),
-                  // Register Now
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Don\’t have an account?',
-                          style: GoogleFonts.robotoSlab(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 10,
-                              color: MyThemeData.Black)),
-                      TextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, SignUp.routeName);
-                          },
-                          child: Text(' Register Now',
-                              style: GoogleFonts.robotoSlab(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 10,
-                                  color: MyThemeData.MainDarkGreen))),
-                    ],
-                  ),
-                ],
-              ))
+                Form(
+                    key: _registrationFormKey,
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 100),
+                        Text('Welcome To Planty App',
+                            style: GoogleFonts.robotoSlab(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                                color: MyThemeData.Black)),
+                        //Email
+                        buildEmailFormField('Email Address', kEmailNullError,
+                            icon: Icons.email),
+                        buildPasswordFormField(password: 'password'),
+                        const SizedBox(height: 15),
+                        CoustomButtonAlignment('LOGIN', onClick,
+                            Btn_icon: Icons.arrow_forward),
+                        const SizedBox(height: 20),
+                        //Sign in with
+                        Text(
+                            'ـــــــــــــــــــــــــ  Sign in with  ــــــــــــــــــــــــــــ',
+                            style: GoogleFonts.andada(
+                                fontWeight: FontWeight.normal,
+                                fontSize: 18,
+                                color: MyThemeData.MainDarkGreen)),
+                        //sign in with Buttons
+                        CoustomButtonsSocal(),
+                        // Register Now
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Don’t have an account?',
+                                style: GoogleFonts.robotoSlab(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 10,
+                                    color: MyThemeData.Black)),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, SignUp.routeName);
+                                },
+                                child: Text(' Register Now',
+                                    style: GoogleFonts.robotoSlab(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10,
+                                        color: MyThemeData.MainDarkGreen))),
+                          ],
+                        ),
+                      ],
+                    ))
               ],
             ),
           ),
