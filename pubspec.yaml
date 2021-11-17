@@ -43,6 +43,7 @@ dependencies:
 
 
 
+
 flutter_icons:
   android: true
   ios: true

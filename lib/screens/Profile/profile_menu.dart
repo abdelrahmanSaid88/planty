@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:planty/components/my_theme_data.dart';
+import 'package:planty/components/my_theme_colors.dart';
 
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
@@ -20,11 +20,11 @@ class ProfileMenu extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
       child: TextButton(
         style: TextButton.styleFrom(
-          primary: MyThemeData.MainDarkGreen,
+          primary: MyThemeColors.mainDarkGreen,
           padding:const EdgeInsets.all(20),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-          backgroundColor: MyThemeData.White,
+          backgroundColor: MyThemeColors.white,
         ),
         onPressed: press,
         child: Row(
@@ -38,7 +38,7 @@ class ProfileMenu extends StatelessWidget {
                 style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.w400,
                     fontSize: 16,
-                    color: MyThemeData.MainDarkGreen))),
+                    color: MyThemeColors.mainDarkGreen))),
              // Icon(Icons.arrow_forward_ios),
           ],
         ),

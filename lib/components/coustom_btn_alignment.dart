@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../main.dart';
-import 'my_theme_data.dart';
+import 'my_theme_colors.dart';
 
 class CoustomButtonAlignment extends StatelessWidget {
 
@@ -42,7 +42,7 @@ class CoustomButtonAlignment extends StatelessWidget {
             style: GoogleFonts.robotoSlab(
                 fontWeight: FontWeight.bold,
                 fontSize: 16.5,
-                color: MyThemeData.White)),
+                color: MyThemeColors.white)),
         icon:  Icon(
           Btn_icon,
           color: Colors.white,

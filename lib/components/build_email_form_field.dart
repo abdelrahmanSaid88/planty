@@ -2,16 +2,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
-import 'my_theme_data.dart';
+import 'my_theme_colors.dart';
 
 class buildEmailFormField extends StatelessWidget{
 
-  var emailController = TextEditingController();
    String? email;
    String? error;
    IconData? icon;
+  TextEditingController emailController =TextEditingController();
+
   final _registrationFormKey = GlobalKey<FormState>();
-  buildEmailFormField( this.email,this.error, { this.icon}) ;
+  buildEmailFormField( this.emailController,this.email,this.error, { this.icon}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +38,13 @@ class buildEmailFormField extends StatelessWidget{
             labelText: email,
             labelStyle: TextStyle(
               fontWeight: FontWeight.w500,
-              color: MyThemeData.MainDarkGreen,
+              color: MyThemeColors.mainDarkGreen,
             ),
             floatingLabelBehavior: FloatingLabelBehavior.auto,
             suffixIcon: Icon(
               icon,
               size: 25,
-              color: MyThemeData.MainDarkGreen,
+              color: MyThemeColors.mainDarkGreen,
             )),
       ),
     );

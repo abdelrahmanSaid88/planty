@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
-import 'my_theme_data.dart';
+import 'my_theme_colors.dart';
 
 class buildPasswordFormField extends StatefulWidget {
  //const BuildPasswordFormField({Key? key}) : super(key: key);
  final String? password;
   final IconData? icon;
-  const buildPasswordFormField( {this.password,this.icon});
+ TextEditingController passwordController =TextEditingController();
+
+   buildPasswordFormField( this.passwordController,{this.password,this.icon});
 
   @override
-  State<buildPasswordFormField> createState() => _buildPasswordFormFieldState(password:this.password,icon: this.icon);
+  State<buildPasswordFormField> createState() => _buildPasswordFormFieldState(this.passwordController,password:this.password,icon: this.icon);
 }
 
 class _buildPasswordFormFieldState extends State<buildPasswordFormField> {
@@ -18,8 +20,9 @@ class _buildPasswordFormFieldState extends State<buildPasswordFormField> {
   String? password;
   IconData? icon;
   bool isHiddenPassword =true;
-  var passwordController = TextEditingController();
-  _buildPasswordFormFieldState({this.password, this.icon});
+ // var passwordController = TextEditingController();
+  TextEditingController passwordController =TextEditingController();
+  _buildPasswordFormFieldState(this.passwordController,{this.password, this.icon});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -45,7 +48,7 @@ class _buildPasswordFormFieldState extends State<buildPasswordFormField> {
             labelText: password,
             labelStyle: TextStyle(
               fontWeight: FontWeight.w500,
-              color: MyThemeData.MainDarkGreen,
+              color: MyThemeColors.mainDarkGreen,
             ),
             floatingLabelBehavior: FloatingLabelBehavior.auto,
             suffixIcon: InkWell(
@@ -54,7 +57,7 @@ class _buildPasswordFormFieldState extends State<buildPasswordFormField> {
                 isHiddenPassword ? Icons.visibility_off : Icons.visibility,
                 semanticLabel: isHiddenPassword ? kHidePass : kShowPass,
                 size: 25,
-                color: MyThemeData.MainDarkGreen,
+                color: MyThemeColors.mainDarkGreen,
               ),
             )),
       ),

@@ -1,55 +1,68 @@
-// ignore_for_file: prefer_const_declarations, prefer_const_constructors, use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:planty/components/my_theme_data.dart';
-
-
+import 'package:flutter_svg/svg.dart';
+import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/screens/Home/home_fragment.dart';
+import 'package:planty/screens/Profile/profile_screen.dart';
 class HomeScreen extends StatefulWidget {
-  //const HomeScreen({Key? key}) : super(key: key);
-  static final routeName = 'Home';
-
+ // const HomeScreen({Key? key}) : super(key: key);
+  static const routeName = 'Home Screen';
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyThemeData.BackgroundColor,
-      appBar: AppBar(
-        toolbarHeight: 80,
-        backgroundColor: MyThemeData.White,
-        leading: IconButton(
-            icon: Icon(Icons.search_rounded, size: 30, color: MyThemeData.DarkGreen),
-            onPressed: OnNotification ),
-        shape: ContinuousRectangleBorder(
-            borderRadius: BorderRadius.only(bottomRight: Radius.circular(20), bottomLeft: Radius.circular(20))),
-        title:
-        Text('Planty',
-            style: GoogleFonts.poorStory(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                color: MyThemeData.MainDarkGreen)),
-        actions: [
-          IconButton(
-              icon: Icon(Icons.notification_important,
-                  size: 30, color: MyThemeData.DarkGreen),
-              onPressed: OnNotification),
-        ],
-        centerTitle: true,
-        elevation: 30.0,
+      backgroundColor: MyThemeColors.backgroundColor,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: MyThemeColors.mainDarkGreen,
+        child: SvgPicture.asset("assets/images/ic_scan.svg"),
+        //shape: StadiumBorder(side: BorderSide(color: Colors.white, width: 0)),
+        onPressed: () {},
       ),
+      bottomNavigationBar: BottomAppBar(
+        elevation: 80.0,
+        shape: const CircularNotchedRectangle(),
+        notchMargin: 8.0,
+        clipBehavior: Clip.antiAlias,
+        child: BottomNavigationBar(
+          elevation: 10.0,
+          selectedItemColor: MyThemeColors.darkGreen,
+          currentIndex: _currentIndex,
+          onTap: (int index) {
+            _currentIndex = index;
+            setState(() {});
+          },
+          showUnselectedLabels: true,
+          showSelectedLabels: true,
+          items:const [
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage('assets/images/ic_home.png'),
+                size: 35,
+              ),
+              label: 'Planty',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage('assets/images/ic_profile.png'),
+                size: 35,
+              ),
+              label: 'Profile',
+            ),
+          ],
+        ),
+      ),
+      body: tabs[_currentIndex],
     );
-
   }
 
+  List<Widget> tabs =[
+    HomeFragment(),
+    ProfileScreen()
+  ];
 
-
-
-
-  void OnNotification() {
-    print('notifi here');
-  }
 }

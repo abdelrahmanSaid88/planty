@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../main.dart';
-import 'my_theme_data.dart';
+import 'my_theme_colors.dart';
 
 class CoustomButtonsSocal extends StatelessWidget {
 
@@ -17,9 +17,9 @@ class CoustomButtonsSocal extends StatelessWidget {
           heroTag: "btn1",
           mini: true,
           onPressed: () {},
-          child: Image.asset("assets/images/ic_google.png"),
+          child: SvgPicture.asset("assets/images/ic_google.svg"),
           // SvgPicture.asset("assets/images/ic_google.svg"),
-          backgroundColor: MyThemeData.White,
+          backgroundColor: MyThemeColors.white,
           elevation: 15,
         ),
         const SizedBox(width: 20),
@@ -28,7 +28,7 @@ class CoustomButtonsSocal extends StatelessWidget {
           mini: true,
           onPressed: () {},
           child: SvgPicture.asset("assets/images/ic_facebook.svg"),
-          backgroundColor: MyThemeData.White,
+          backgroundColor: MyThemeColors.white,
           elevation: 15,
         ),
         const SizedBox(width: 20),
@@ -39,7 +39,7 @@ class CoustomButtonsSocal extends StatelessWidget {
 
           },
           child: SvgPicture.asset("assets/images/ic_twitter.svg"),
-          backgroundColor: MyThemeData.White,
+          backgroundColor: MyThemeColors.white,
           elevation: 15,
         ),
       ],
