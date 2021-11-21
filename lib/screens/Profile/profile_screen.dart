@@ -87,16 +87,4 @@ class _ProfileScreenState extends State<ProfileScreen> {
     Navigator.pushNamed(context, SignIn.routeName);
   }
 }
-/*
-SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          SizedBox(height: 30),
-          ProfilePic(),
-          SizedBox(height: 20),
-        ],
-      ),
-    );
- */
 

@@ -1,17 +1,15 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
 import 'my_theme_colors.dart';
 
-class buildUserNameFormField extends StatelessWidget{
+class BuildUserNameFormField extends StatelessWidget{
 
   TextEditingController userNameController =TextEditingController();
    String? username;
    String? error;
    IconData? icon;
   final _registrationFormKey = GlobalKey<FormState>();
-  buildUserNameFormField( this.userNameController,this.username,this.error, { this.icon}) ;
+  BuildUserNameFormField( this.userNameController,this.username,this.error, { this.icon}) ;
 
   @override
   Widget build(BuildContext context) {

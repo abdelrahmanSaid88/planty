@@ -54,7 +54,7 @@ class _SignUpState extends State<SignUp> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 23,
                                 color: MyThemeColors.black)),
-                        buildUserNameFormField(userNameController,'UserName',kNamelNullError),
+                        BuildUserNameFormField(userNameController,'UserName',kNamelNullError),
                         buildEmailFormField(
                            emailController, 'Email address', kEmailNullError),
                          buildPasswordFormField(passwordController,password: 'Password'),

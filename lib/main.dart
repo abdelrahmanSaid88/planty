@@ -6,7 +6,7 @@ import 'package:planty/screens/Profile/profile_screen.dart';
 
 import 'package:planty/screens/Registration/sign_in.dart';
 
-void main() async {
+ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp( const MyApp());
