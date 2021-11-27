@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:planty/components/appbar_text_style.dart';
 import 'package:planty/components/my_theme_colors.dart';
 import 'package:planty/screens/Home/home_screen.dart';
 import 'package:planty/screens/garden/componant/garden_menus.dart';
 import 'package:planty/screens/information/plant_information.dart';
 
 class GardenScreen extends StatefulWidget {
-  const GardenScreen({Key? key}) : super(key: key);
+ // const GardenScreen({Key? key}) : super(key: key);
   static const routeName = 'Garden Screen';
 
   @override
@@ -17,6 +18,7 @@ class _GardenScreenState extends State<GardenScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: MyThemeColors.backgroundColor,
         appBar: AppBar(
           toolbarHeight: 65,
@@ -32,10 +34,7 @@ class _GardenScreenState extends State<GardenScreen> {
                   bottomRight: Radius.circular(20),
                   bottomLeft: Radius.circular(20))),
           title: Text('Planty',
-              style: GoogleFonts.poorStory(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: MyThemeColors.white)),
+              style:appBarStyle(MyThemeColors.white)),
           centerTitle: true,
         ),
         body: SingleChildScrollView(

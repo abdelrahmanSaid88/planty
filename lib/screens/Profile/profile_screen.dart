@@ -9,7 +9,7 @@ import 'package:planty/screens/Profile/profile_picture.dart';
 import 'package:planty/screens/Registration/sign_in.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+//  const ProfileScreen({Key? key}) : super(key: key);
   static const routeName = 'Profile Screen';
 
   @override

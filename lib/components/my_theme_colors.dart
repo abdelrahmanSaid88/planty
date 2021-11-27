@@ -8,5 +8,5 @@ class MyThemeColors {
   static var white = const Color.fromRGBO(255, 255, 255, 1.0);
   static var harvestGreen = const Color.fromRGBO(62, 212, 0, 1.0);
   static var waterColor = const Color.fromRGBO(81, 177, 251, 1.0);
-  static var colorOff = const Color.fromRGBO(189, 193, 187, 1.0);
+  static var colorOff = const Color.fromRGBO(112, 112, 112, 1.0);
 }

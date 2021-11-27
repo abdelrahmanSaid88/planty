@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:planty/components/appbar_text_style.dart';
 import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/screens/Home/components/add_plant_widget.dart';
 import 'package:planty/screens/Home/components/calender_table.dart';
 import 'package:planty/screens/Home/components/home_menus.dart';
 import 'package:planty/screens/Home/components/recent_photos_menu.dart';
@@ -8,7 +10,7 @@ import 'package:planty/screens/Home/components/section_title.dart';
 import 'package:planty/screens/garden/garden_screen.dart';
 
 class HomeFragment extends StatefulWidget {
-  const HomeFragment({Key? key}) : super(key: key);
+  //const HomeFragment({Key? key}) : super(key: key);
   static const routeName = 'Home Fragment';
 
   @override
@@ -16,13 +18,13 @@ class HomeFragment extends StatefulWidget {
 }
 
 class _HomeFragmentState extends State<HomeFragment> {
-  DateTime selectedDay = DateTime.now();
-  DateTime focusedDay = DateTime.now();
+
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: MyThemeColors.backgroundColor,
         appBar: AppBar(
           toolbarHeight: 65,
@@ -35,11 +37,8 @@ class _HomeFragmentState extends State<HomeFragment> {
               borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(20),
                   bottomLeft: Radius.circular(20))),
-          title: Text('Planty',
-              style: GoogleFonts.poorStory(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: MyThemeColors.mainDarkGreen)),
+          title:
+              Text('Planty', style: appBarStyle(MyThemeColors.mainDarkGreen)),
           actions: [
             IconButton(
                 icon: Icon(Icons.notifications,
@@ -136,10 +135,15 @@ class _HomeFragmentState extends State<HomeFragment> {
   }
 
   void _addPlant() {
-
+    showModalBottomSheet(
+        context: context,
+        builder: (buildContext) {
+          return AddPlantWidget();
+        });
   }
 
   void _viewDetiels() {
     Navigator.pushNamed(context, GardenScreen.routeName);
   }
 }
+

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:planty/components/appbar_text_style.dart';
 import 'package:planty/components/coustom_btn_alignment.dart';
 import 'package:planty/components/my_theme_colors.dart';
 import 'package:planty/constants.dart';
@@ -10,12 +11,13 @@ import 'package:planty/screens/information/components/plant_scroll_information.d
 import 'package:planty/screens/information/components/take_care_box.dart';
 
 class PlantInformation extends StatelessWidget {
-  const PlantInformation({Key? key}) : super(key: key);
+  //const PlantInformation({Key? key}) : super(key: key);
   static const routeName = 'Plant Information';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: MyThemeColors.backgroundColor,
       appBar: AppBar(
         toolbarHeight: 65,
@@ -31,10 +33,7 @@ class PlantInformation extends StatelessWidget {
                 bottomRight: Radius.circular(20),
                 bottomLeft: Radius.circular(20))),
         title: Text('Plants Information',
-            style: GoogleFonts.poorStory(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                color: MyThemeColors.white)),
+            style: appBarStyle(MyThemeColors.white)),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

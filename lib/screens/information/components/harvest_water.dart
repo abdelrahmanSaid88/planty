@@ -37,9 +37,9 @@ class HarvestWater extends StatelessWidget {
             Text(
               '$harvestOrWater',
               style: GoogleFonts.robotoSlab(
-                  fontWeight: FontWeight.w300,
+                  fontWeight: FontWeight.normal,
                   fontSize: 12,
-                  color: MyThemeColors.black),
+                  color: MyThemeColors.colorOff),
             ),
             const SizedBox(height: 5),
             Padding(

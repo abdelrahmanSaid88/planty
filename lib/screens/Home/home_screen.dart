@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:planty/components/my_theme_colors.dart';
 import 'package:planty/screens/Home/home_fragment.dart';
 import 'package:planty/screens/Profile/profile_screen.dart';
+import 'package:planty/screens/scan/scan_result.dart';
 class HomeScreen extends StatefulWidget {
  // const HomeScreen({Key? key}) : super(key: key);
   static const routeName = 'Home Screen';
@@ -15,13 +16,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: MyThemeColors.backgroundColor,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: MyThemeColors.mainDarkGreen,
         child: SvgPicture.asset("assets/images/ic_scan.svg"),
         //shape: StadiumBorder(side: BorderSide(color: Colors.white, width: 0)),
-        onPressed: () {},
+        onPressed: () { onPress();},
       ),
       bottomNavigationBar: BottomAppBar(
         elevation: 80.0,
@@ -64,5 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeFragment(),
     ProfileScreen()
   ];
+  void onPress() {
+    Navigator.pushNamed(context, ScanResult.routeName);
+  }
 
 }

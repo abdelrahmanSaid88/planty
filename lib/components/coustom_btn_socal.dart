@@ -12,10 +12,9 @@ class CoustomButtonsSocal extends StatefulWidget {
   State<CoustomButtonsSocal> createState() => _CoustomButtonsSocalState();
 
 }
-
 class _CoustomButtonsSocalState extends State<CoustomButtonsSocal> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
- bool isLoading = false;
+  bool isLoading = false;
 
   @override
 
@@ -62,7 +61,7 @@ class _CoustomButtonsSocalState extends State<CoustomButtonsSocal> {
     setState(() {
       isLoading = true;
     });
-     FirebaseService service = new FirebaseService();
+    FirebaseService service = new FirebaseService();
     try {
       await service.signInWithGoogle();
       Navigator.pushNamedAndRemoveUntil(context,HomeScreen.routeName, (route) => true);
@@ -127,4 +126,3 @@ enum Status {
   Error,
   Cancelled
 }
-
