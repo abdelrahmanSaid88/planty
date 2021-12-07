@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 
 class ScanMenu extends StatelessWidget {
   //const ScanMenu({Key? key}) : super(key: key);

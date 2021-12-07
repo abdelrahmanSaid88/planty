@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:planty/components/google_service.dart';
 import 'package:planty/screens/Home/home_screen.dart';
 
-import 'my_theme_colors.dart';
+import '../my_theme_colors.dart';
 
 class CoustomButtonsSocal extends StatefulWidget {
   @override

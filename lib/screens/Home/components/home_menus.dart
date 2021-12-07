@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 
 class HomeMenus extends StatelessWidget {
   // const HomeMenu({Key? key}) : super(key: key);
@@ -12,12 +12,12 @@ class HomeMenus extends StatelessWidget {
   bool isHarvest = true;
 
   HomeMenus(
-    this.isHarvest,
-    this.detielsPress, {
-    this.plantImage,
-    this.plantName,
-    this.date,
-  });
+      this.isHarvest,
+      this.detielsPress, {
+        this.plantImage,
+        this.plantName,
+        this.date,
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,8 @@ class HomeMenus extends StatelessWidget {
             ),
           ),
           child: Column(
-             mainAxisAlignment: MainAxisAlignment.start,
-             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.all(6.0),

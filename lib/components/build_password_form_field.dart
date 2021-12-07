@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
-import 'my_theme_colors.dart';
+import '../my_theme_colors.dart';
 
 class buildPasswordFormField extends StatefulWidget {
- //const BuildPasswordFormField({Key? key}) : super(key: key);
- final String? password;
+  //const BuildPasswordFormField({Key? key}) : super(key: key);
+  final String? password;
   final IconData? icon;
- TextEditingController passwordController =TextEditingController();
+  TextEditingController passwordController =TextEditingController();
 
-   buildPasswordFormField( this.passwordController,{this.password,this.icon});
+  buildPasswordFormField( this.passwordController,{this.password,this.icon});
 
   @override
   State<buildPasswordFormField> createState() => _buildPasswordFormFieldState(this.passwordController,password:this.password,icon: this.icon);
@@ -20,7 +20,7 @@ class _buildPasswordFormFieldState extends State<buildPasswordFormField> {
   String? password;
   IconData? icon;
   bool isHiddenPassword =true;
- // var passwordController = TextEditingController();
+  // var passwordController = TextEditingController();
   TextEditingController passwordController =TextEditingController();
   _buildPasswordFormFieldState(this.passwordController,{this.password, this.icon});
   @override
@@ -70,5 +70,4 @@ class _buildPasswordFormFieldState extends State<buildPasswordFormField> {
     });
   }
 }
-
 

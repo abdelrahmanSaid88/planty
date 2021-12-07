@@ -5,7 +5,7 @@ import 'package:planty/components/build_password_form_field.dart';
 import 'package:planty/components/coustom_btn_alignment.dart';
 import 'package:planty/components/coustom_btn_socal.dart';
 import 'package:planty/components/build_email_form_field.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 import 'package:planty/screens/Home/home_screen.dart';
 import 'package:planty/screens/Profile/profile_screen.dart';
 import 'package:planty/screens/Registration/sign_up.dart';
@@ -112,7 +112,7 @@ class _SignInState extends State<SignIn> {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
-              email: emailController.text, password: passwordController.text);
+          email: emailController.text, password: passwordController.text);
       if (userCredential.user == null) {
         showErrorMessage(kUserError);
       } else {

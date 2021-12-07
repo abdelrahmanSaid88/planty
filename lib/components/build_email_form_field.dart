@@ -2,13 +2,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
-import 'my_theme_colors.dart';
+import '../my_theme_colors.dart';
 
 class buildEmailFormField extends StatelessWidget{
 
-   String? email;
-   String? error;
-   IconData? icon;
+  String? email;
+  String? error;
+  IconData? icon;
   TextEditingController emailController =TextEditingController();
 
   final _registrationFormKey = GlobalKey<FormState>();
