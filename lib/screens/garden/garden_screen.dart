@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:planty/components/appbar_text_style.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 import 'package:planty/screens/Home/home_screen.dart';
 import 'package:planty/screens/garden/componant/garden_menus.dart';
 import 'package:planty/screens/information/plant_information.dart';
 
 class GardenScreen extends StatefulWidget {
- // const GardenScreen({Key? key}) : super(key: key);
+  // const GardenScreen({Key? key}) : super(key: key);
   static const routeName = 'Garden Screen';
 
   @override

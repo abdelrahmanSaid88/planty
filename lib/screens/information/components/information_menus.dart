@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 
 class InformationMenus extends StatelessWidget {
- // const InformationMenus({Key? key}) : super(key: key);
+  // const InformationMenus({Key? key}) : super(key: key);
   String? plantImage;
 
   InformationMenus(this.plantImage);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:planty/components/appbar_text_style.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 import 'package:planty/screens/Home/components/add_plant_widget.dart';
 import 'package:planty/screens/Home/components/calender_table.dart';
 import 'package:planty/screens/Home/components/home_menus.dart';
@@ -38,7 +38,7 @@ class _HomeFragmentState extends State<HomeFragment> {
                   bottomRight: Radius.circular(20),
                   bottomLeft: Radius.circular(20))),
           title:
-              Text('Planty', style: appBarStyle(MyThemeColors.mainDarkGreen)),
+          Text('Planty', style: appBarStyle(MyThemeColors.mainDarkGreen)),
           actions: [
             IconButton(
                 icon: Icon(Icons.notifications,
@@ -138,7 +138,7 @@ class _HomeFragmentState extends State<HomeFragment> {
     showModalBottomSheet(
         context: context,
         builder: (buildContext) {
-          return AddPlantWidget();
+          return const AddPlantWidget();
         });
   }
 
@@ -146,4 +146,3 @@ class _HomeFragmentState extends State<HomeFragment> {
     Navigator.pushNamed(context, GardenScreen.routeName);
   }
 }
-

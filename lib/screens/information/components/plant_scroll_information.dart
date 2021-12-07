@@ -15,11 +15,11 @@ class PlantScrollInformation extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           InformationMenus('assets/images/img_test_tom.png'),
-           const SizedBox(width: 15),
+          const SizedBox(width: 15),
           InformationMenus('assets/images/img_tomatoes.png'),
           const SizedBox(width: 15),
           InformationMenus('assets/images/img_test_tom.png'),
-           const SizedBox(width: 15),
+          const SizedBox(width: 15),
           InformationMenus('assets/images/img_tomatoes.png'),
           const SizedBox(width: 15),
           InformationMenus('assets/images/img_test_tom.png'),

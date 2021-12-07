@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 
 class TitleResult extends StatelessWidget {
   // const TitleResult({

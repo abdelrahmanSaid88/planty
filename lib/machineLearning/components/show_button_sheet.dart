@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 
 class ShowBottomSheet extends StatelessWidget{
   dynamic pickFromGallery ;
@@ -32,7 +32,7 @@ class ShowBottomSheet extends StatelessWidget{
                     children: [
                        Center(
                         child: Text(
-                          'choice Camera Or Gallery ?',
+                          'Choice Camera Or Gallery ?',
                             style: GoogleFonts.robotoSlab(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 14,

@@ -1,17 +1,16 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../main.dart';
-import 'my_theme_colors.dart';
+import '../my_theme_colors.dart';
 
 class CoustomButtonAlignment extends StatelessWidget {
-
-
   final String? Btn_text;
   final IconData? Btn_icon;
   final Function? press;
-  const CoustomButtonAlignment(this.Btn_text,this.press, {this.Btn_icon});
+
+  const CoustomButtonAlignment(this.Btn_text, this.press, {this.Btn_icon});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,13 +36,15 @@ class CoustomButtonAlignment extends StatelessWidget {
           onSurface: Colors.transparent,
           shadowColor: Colors.transparent,
         ),
-        onPressed: press as void Function(),
+        onPressed: () {
+          press;
+        },
         label: Text(Btn_text!,
             style: GoogleFonts.robotoSlab(
                 fontWeight: FontWeight.bold,
                 fontSize: 16.5,
                 color: MyThemeColors.white)),
-        icon:  Icon(
+        icon: Icon(
           Btn_icon,
           color: Colors.white,
           size: 22.0,
@@ -51,6 +52,4 @@ class CoustomButtonAlignment extends StatelessWidget {
       ),
     );
   }
-
-
 }

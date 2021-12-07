@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:planty/components/appbar_text_style.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 import 'package:planty/machineLearning/components/show_button_sheet.dart';
 import 'package:planty/screens/diseases/early_blight.dart';
 import 'package:planty/screens/diseases/powdery_mildew.dart';

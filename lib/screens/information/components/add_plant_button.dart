@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 
 class AddPlantButton extends StatelessWidget {
   // const AddPlantButton({Key? key,}) : super(key: key);
@@ -17,7 +17,7 @@ class AddPlantButton extends StatelessWidget {
           onPressed: addPlant(),
           style: ButtonStyle(
               backgroundColor:
-                  MaterialStateProperty.all(MyThemeColors.mainDarkGreen)),
+              MaterialStateProperty.all(MyThemeColors.mainDarkGreen)),
           child: Text('$add',
               style: GoogleFonts.robotoSlab(
                   fontWeight: FontWeight.bold,
@@ -26,7 +26,3 @@ class AddPlantButton extends StatelessWidget {
     );
   }
 }
-/*
-decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
- */

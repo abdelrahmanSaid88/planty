@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 import 'package:planty/machineLearning/scan_result.dart';
 import 'package:planty/screens/Home/home_fragment.dart';
 import 'package:planty/screens/Profile/profile_screen.dart';

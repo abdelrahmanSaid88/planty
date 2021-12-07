@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:planty/components/appbar_text_style.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/constants.dart';
+import 'package:planty/my_theme_colors.dart';
 import 'package:planty/screens/diseases/componant/scan_result_box.dart';
 import 'package:planty/screens/diseases/componant/scen_menu.dart';
-
 class earlyBlight extends StatelessWidget {
   static const routeName = 'Early Blight';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,23 +58,14 @@ class earlyBlight extends StatelessWidget {
                 ),
               ),
               ScanResultBox(
-                titleIcon: 'assets/images/ic_plant_book.svg',
-                title: 'Symptoms ',
-                disease: '• Dark spots with concentric growth and yellow halos on leaves. '
-                    '\n'
-                    '• Leaves dry out and fall off.'
-                    '\n'
-                    '• Fruits may start to rot and eventually drop.'
-                    '\n'
-                    '• Symptoms of early blight occur on older foliage, stem, and fruits. Gray to brown spots appear on leaves and gradually grow in a concentric manner around a clear center - the characteristic “bullseye” formation. These lesions are surrounded by a bright yellow halo As the disease progresses, entire leaves may turn chlorotic and shed, leading to significant defoliation. When leaves die and fall, fruits become more vulnerable to sun scald. The same type of spots with a clear center appears on stems and fruits. The fruits begin to rot and may eventually fall off.',
-              ),
+                  titleIcon: 'assets/images/ic_plant_book.svg',
+                  title: 'Symptoms ',
+                  disease: DisErlyBlight ),
               const SizedBox(height: 60),
               ScanResultBox(
                   titleIcon: 'assets/images/ic_more_information.svg',
                   title: 'More Info. ',
-                  disease: '• Scientific name:  Alternaria solani'
-                      '\n'
-                      '• Also found in:Capsicum & Chilli, Brinjal, Potato, Tomato '),
+                  disease: DisErlyMore),
               const SizedBox(height: 30),
               Center(
                 child: Text('Your Crop doctor ',

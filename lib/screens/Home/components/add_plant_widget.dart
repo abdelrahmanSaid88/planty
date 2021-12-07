@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:planty/components/appbar_text_style.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
+import 'package:planty/screens/Home/data/firebase_utils.dart';
 import 'package:planty/screens/Profile/profile_picture.dart';
 
 class AddPlantWidget extends StatefulWidget {
@@ -14,6 +15,7 @@ class AddPlantWidget extends StatefulWidget {
 class _AddPlantWidgetState extends State<AddPlantWidget> {
   var formKey = GlobalKey<FormState>();
   String title = '';
+  String description = '';
   DateTime selectedDate = DateTime.now();
 
   @override
@@ -27,18 +29,19 @@ class _AddPlantWidgetState extends State<AddPlantWidget> {
           Text('Add New Plant',
               textAlign: TextAlign.center,
               style: appBarStyle(MyThemeColors.mainDarkGreen)),
-          const ProfilePicture(),
+         // const ProfilePicture(),
+          Container(child: Image.asset('assets/images/img_tomatoes.png')),
           Form(
             key: formKey,
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(25.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: TextFormField(
                     decoration:  InputDecoration(labelText: 'Enter Plant Name ',labelStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-              color: MyThemeColors.mainDarkGreen,
-            ), ),
+                      fontWeight: FontWeight.normal,
+                      color: MyThemeColors.mainDarkGreen,
+                    ), ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "please enter plant name";
@@ -53,7 +56,7 @@ class _AddPlantWidgetState extends State<AddPlantWidget> {
               ],
             ),
           ),
-           Padding(
+          Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text('Select Date',style: TextStyle(
               fontWeight: FontWeight.normal,
@@ -67,15 +70,17 @@ class _AddPlantWidgetState extends State<AddPlantWidget> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
-                '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  color: MyThemeColors.darkGreen,)
+                  '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    color: MyThemeColors.darkGreen,)
               ),
             ),
           ),
-          ElevatedButton(onPressed: addPlant, child: Text('Add Plant'))
+          ElevatedButton(onPressed:() {
+            addPlant();
+          }, child: Text('Add Plant'))
         ],
       ),
     );
@@ -83,7 +88,7 @@ class _AddPlantWidgetState extends State<AddPlantWidget> {
   void addPlant() {
     if (formKey.currentState!.validate() == true) {
       // add todo
-      addTodoToFirebase(title, selectedDate).then((value) {
+      addPLantToFirebase(title, description, selectedDate).then((value) {
         Navigator.pop(context);
       }).onError((error, stackTrace) {
         print(error.toString());
@@ -92,6 +97,7 @@ class _AddPlantWidgetState extends State<AddPlantWidget> {
       });
     }
   }
+
   void showCalendar() async {
     var newSelectedDate = await showDatePicker(
       context: context,
@@ -105,7 +111,7 @@ class _AddPlantWidgetState extends State<AddPlantWidget> {
     }
   }
 
-  addTodoToFirebase(String title, DateTime selectedDate) {}
+
 }
 
 void Pressed() {}

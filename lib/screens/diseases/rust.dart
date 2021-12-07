@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:planty/components/appbar_text_style.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/constants.dart';
+import 'package:planty/my_theme_colors.dart';
 import 'package:planty/screens/diseases/componant/scan_result_box.dart';
 import 'package:planty/screens/diseases/componant/scen_menu.dart';
 class Rust extends StatelessWidget {
@@ -49,37 +50,24 @@ class Rust extends StatelessWidget {
                       color: MyThemeColors.mainDarkGreen)),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  ScanMenu('assets/images/img_rust_i.png'),
-                  ScanMenu('assets/images/img_rust_ii.png'),
-                  ScanMenu('assets/images/img_rust_iii.png'),
-                  ScanMenu('assets/images/img_rust_i.png'),
-                ],
+                child: Row(
+                  children: [
+                    ScanMenu('assets/images/img_rust_i.png'),
+                    ScanMenu('assets/images/img_rust_ii.png'),
+                    ScanMenu('assets/images/img_rust_iii.png'),
+                    ScanMenu('assets/images/img_rust_i.png'),
+                  ],
+                ),
               ),
-            ),
               ScanResultBox(
-                titleIcon: 'assets/images/ic_plant_book.svg',
-                title: 'Symptoms ',
-                disease:
-                    '• Leaf rust is a disease that attacks garden plants in wet, humid conditions. It is common on roses, snapdragons, hollyhocks, crabapples, and daylilies. '
-                    '\n'
-                    '• Bright-orange-red, circular spots appear on the upper surface of leaves.'
-                    '\n'
-                    '• Brownish and gall-like outgrowths develop on the underside of leaves.'
-                    '\n'
-                    '• Occasionally, sunken cankers in the bark of branches and young trunks.'
-                    '\n'
-                    '• Small, brown, circular spots develop first onto the upper surface of leaves. As they enlarge, they turn bright orange-red with a dark brown center. In late summer, grain-shaped, brownish and gall-like outgrowths can be observed on the underside of leaves. Occasionally, the fungus can also cause lesions and sunken cankers in the bark of branches and young trunks. Even though the fruits are not directly affected, a severe infection can cause defoliation and crop losses.'
-
-              ),
+                  titleIcon: 'assets/images/ic_plant_book.svg',
+                  title: 'Symptoms ',
+                  disease: DisRust),
               const SizedBox(height: 60),
               ScanResultBox(
                   titleIcon: 'assets/images/ic_more_information.svg',
                   title: 'More Info. ',
-                  disease: '• Scientific name: Basidiomycota'
-                      '\n'
-                      '• Also found in: Cucumber, Pumpkin, Zucchini, Potato, Melon, Bitter Gourd. '),
+                  disease: DisRustMore),
               const SizedBox(height: 30),
               Center(
                 child: Text('Your Crop doctor ',

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 import 'package:planty/screens/information/plant_information.dart';
 
 class RadioButton extends StatefulWidget {

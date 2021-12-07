@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class CalenderTable extends StatefulWidget {

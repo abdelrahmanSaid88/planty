@@ -5,10 +5,12 @@ import 'package:planty/components/build_password_form_field.dart';
 import 'package:planty/components/coustom_btn_alignment.dart';
 import 'package:planty/components/coustom_btn_socal.dart';
 import 'package:planty/components/build_email_form_field.dart';
-import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/my_theme_colors.dart';
 import 'package:planty/screens/Home/home_screen.dart';
-import 'package:planty/screens/Profile/profile_screen.dart';
+import 'package:planty/screens/Registration/model/app_provider.dart';
+import 'package:planty/screens/Registration/model/helper_database.dart';
 import 'package:planty/screens/Registration/sign_up.dart';
+import 'package:provider/provider.dart';
 import '../../constants.dart';
 
 class SignIn extends StatefulWidget {
@@ -19,12 +21,20 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  final _registrationFormKey = GlobalKey<FormState>();
+  final _loginFormKey = GlobalKey<FormState>();
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
+  late AppProvider provider;
+  void dispose() {
+    emailController.dispose();
 
+    passwordController.dispose();
+
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
+    provider = Provider.of<AppProvider>(context);
     return Stack(
       children: [
         Container(
@@ -44,7 +54,7 @@ class _SignInState extends State<SignIn> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Form(
-                    key: _registrationFormKey,
+                    key: _loginFormKey,
                     child: Column(
                       children: [
                         const SizedBox(height: 100),
@@ -60,7 +70,7 @@ class _SignInState extends State<SignIn> {
                         buildPasswordFormField(passwordController,
                             password: 'password'),
                         const SizedBox(height: 15),
-                        CoustomButtonAlignment('LOGIN', createFirebaseUser,
+                        CoustomButtonAlignment('LOGIN', onClicklogin,
                             Btn_icon: Icons.arrow_forward),
                         const SizedBox(height: 20),
                         //Sign in with
@@ -105,23 +115,57 @@ class _SignInState extends State<SignIn> {
 
   bool isLoading = false;
 
+  // void createFirebaseUser() async {
+  //   setState(() {
+  //     isLoading = true;
+  //   });
+  //   try {
+  //     UserCredential userCredential = await FirebaseAuth.instance
+  //         .signInWithEmailAndPassword(
+  //         email: emailController.text, password: passwordController.text);
+  //     if (userCredential.user == null) {
+  //       showErrorMessage(kUserError);
+  //     } else {
+  //       Navigator.pushNamed(context, HomeScreen.routeName);
+  //     }
+  //   } on FirebaseAuthException catch (e) {
+  //     showErrorMessage(e.message ?? '');
+  //   } catch (e) {
+  //    // showErrorMessage(e.toString() ?? 'aaaaaa');
+  //   }
+  //   setState(() {
+  //     isLoading = false;
+  //   });
+  // }
+  void onClicklogin() async {
+    if (_loginFormKey.currentState?.validate() == true) {
+      createFirebaseUser();
+    }
+  }
   void createFirebaseUser() async {
     setState(() {
       isLoading = true;
     });
-    try {
-      UserCredential userCredential = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(
-              email: emailController.text, password: passwordController.text);
-      if (userCredential.user == null) {
-        showErrorMessage(kUserError);
-      } else {
-        Navigator.pushNamed(context, HomeScreen.routeName);
+    if (_loginFormKey.currentState?.validate() == true) {
+
+      try {
+        UserCredential userCredential=await FirebaseAuth.instance.signInWithEmailAndPassword(
+            email: emailController.text, password: passwordController.text);
+        if(userCredential.user==null){
+          showErrorMessage(kUserError);
+        }else{
+          final userCollectionRef = getUserCollectionsWithConvert();
+          userCollectionRef.doc(userCredential.user!.uid)
+              .get()
+              .then((value) => provider.updateUser(value.data()));
+          Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+        }
+
+      } on FirebaseAuthException catch (e) {
+        showErrorMessage(e.message ?? kMessegeError);
+      } catch (e) {
+        print(e);
       }
-    } on FirebaseAuthException catch (e) {
-      showErrorMessage(e.message ?? '');
-    } catch (e) {
-      //showErrorMessage(e.toString() ?? '');
     }
     setState(() {
       isLoading = false;
