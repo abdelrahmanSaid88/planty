@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:planty/components/my_theme_colors.dart';
+import 'package:planty/machineLearning/scan_result.dart';
 import 'package:planty/screens/Home/home_fragment.dart';
 import 'package:planty/screens/Profile/profile_screen.dart';
-import 'package:planty/screens/scan/scan_result.dart';
+
 class HomeScreen extends StatefulWidget {
  // const HomeScreen({Key? key}) : super(key: key);
   static const routeName = 'Home Screen';
@@ -67,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ProfileScreen()
   ];
   void onPress() {
-    Navigator.pushNamed(context, ScanResult.routeName);
+    Navigator.pushNamed(context, scanResult.routeName);
   }
 
 }

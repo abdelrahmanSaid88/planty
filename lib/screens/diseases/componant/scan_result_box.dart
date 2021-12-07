@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:planty/components/my_theme_colors.dart';
-import 'package:planty/screens/scan/componant/title_result.dart';
+import 'package:planty/screens/diseases/componant/title_result.dart';
 
 class ScanResultBox extends StatelessWidget {
   // const ScanResultBox({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ ScanResultBox({this.disease, this.titleIcon, this.title});
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 230,
+      height: 400,
       width: 428,
       //  margin: const EdgeInsets.only(top: 17.0),
       child: Card(

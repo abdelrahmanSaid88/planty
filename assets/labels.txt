@@ -1,0 +1,3 @@
+0 Powdery Mildew
+1 Early blight
+2 Rust

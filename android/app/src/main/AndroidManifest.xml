@@ -2,7 +2,7 @@
     package="com.example.planty">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="planty"
+        android:label="Planty"
         android:icon="@mipmap/ic_launcher">
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -12,8 +12,7 @@
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
-            android:configChanges="keyboard|orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:usesCleartextTraffic="true"
             android:exported="true"

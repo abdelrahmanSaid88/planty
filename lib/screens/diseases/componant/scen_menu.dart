@@ -11,10 +11,10 @@ class ScanMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 175,
-      width: 310,
+      width: 260,
       color: MyThemeColors.backgroundColor,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(5.0),
         child: Row(
           children: [
             Image.asset('$plantImage'),

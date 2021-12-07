@@ -12,7 +12,7 @@ import 'package:planty/screens/information/components/take_care_box.dart';
 
 class PlantInformation extends StatelessWidget {
   //const PlantInformation({Key? key}) : super(key: key);
-  static const routeName = 'Plant Information';
+  static final routeName = 'Plant Information';
 
   @override
   Widget build(BuildContext context) {

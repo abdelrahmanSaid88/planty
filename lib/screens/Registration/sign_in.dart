@@ -134,7 +134,7 @@ class _SignInState extends State<SignIn> {
         builder: (buildContext) {
           return AlertDialog(
             backgroundColor: MyThemeColors.white,
-            content: Text(error,style: TextStyle(color: MyThemeColors.black)),
+            content: Text(error, style: TextStyle(color: MyThemeColors.black)),
             actions: <Widget>[
               // usually buttons at the bottom of the dialog
               FlatButton(
