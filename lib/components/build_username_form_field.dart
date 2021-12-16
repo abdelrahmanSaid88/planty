@@ -5,8 +5,8 @@ import '../my_theme_colors.dart';
 class BuildUserNameFormField extends StatelessWidget{
 
   TextEditingController userNameController =TextEditingController();
-  String? username = '';
-  String? error= '';
+  String? username;
+  String? error;
   IconData? icon;
   final _registrationFormKey = GlobalKey<FormState>();
   BuildUserNameFormField( this.userNameController,this.username,this.error, { this.icon}) ;
